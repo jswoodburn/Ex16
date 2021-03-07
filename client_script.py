@@ -1,31 +1,34 @@
 from person import Person
-
-# vicky = Person(firstname="Victorious")
-# print(vicky.surname)
-
-# vicky = Person("vicky", "QA", "30", "vicky@qa.com")
-# print(vicky.age)
-# # vicky.change_age(300)
-# # print(vicky.age)
-#
-# vicky.change_surname("woodburn")
-# print(vicky.surname)
-#
-# print(vicky.return_full_name())
-#
-# print(vicky.mage)
-# vicky.mage=31
-# print(vicky.mage)
-
-# from employee import Employee
-#
-# amber = Employee("Amber", "Shand", "23", "amberleeshand@gmail.com", "Tech", "6190658", "1997-02-06", "Junior Software "
-#                                                                                                     "Engineer", "100000")
-# print(amber.calculate_years_of_service())
-
+from employee import Employee
 from customer import Customer
 
-jackie = Customer("jackie", "woodburn", 25, "jackie.woodburn@gmail.com", "SW19 7AB", "07512656497", "001")
-print(jackie.make_phone_no_uk())
+ralph = Person("ralph", "lauren", 56, "ralph@lauren.com")
 
-print(jackie.return_full_name())
+# demonstrate use of method
+print(ralph.return_full_name())
+ralph.change_surname("fiennes")
+print(ralph.return_full_name())
+
+# ralph = Person("ralph", "lauren", "fifty-six", "ralph@lauren.com") # this should give us the "except" error
+
+# checking that properties works as expected
+print(ralph.mage)
+ralph.mage = 57
+print(ralph.mage)
+
+tina = Employee("tina", "fey", 50, "tina@fey.com", "Film", "00172", "2001-05-25", "Owner at Toaster Strudel", "250,000")
+
+# demonstrate methods from Person still work
+print(tina.return_full_name())
+
+# test new methods specific to Employee
+print(f"{tina.first_name} has {tina.calculate_years_of_service()} years of service.")
+
+michelle = Customer("michelle", "robinson", 57, "michelle@obama.com", "CH1C 4G0", "07917823958", "007")
+
+# demonstrate methods from Person still work
+michelle.change_surname("obama")
+print(michelle.return_full_name())
+
+# test methods specific to Customer
+print(michelle.make_phone_no_uk())

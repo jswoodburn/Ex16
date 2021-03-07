@@ -2,7 +2,7 @@ from person import Person
 from datetime import date
 
 class Employee(Person):
-    def __init__(self, first_name, surname, age, email, dept, employee_number,start_date,job_title,salary):
+    def __init__(self, first_name, surname, age, email, dept, employee_number, start_date, job_title, salary):
         super().__init__(first_name, surname, age, email)
         self.dept = dept
         self.employee_number = employee_number

@@ -23,7 +23,10 @@ class Person:
     def mset(self, age):
         self.age = age
 
-    mage = property(mget, mset)
+    mage = property(mget, mset)  # make attribute "age" into a property
+
+
+
 
 
 
