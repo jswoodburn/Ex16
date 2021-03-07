@@ -15,6 +15,7 @@ amber = Employee("Amber", "Shand", "23", "amberleeshand@gmail.com", "Tech", "619
                                                                                                     "Engineer", "100000")
 print(amber.calculate_years_of_service())
 
+from customer import Customer
 
 jackie = Customer("jackie", "woodburn", 25, "jackie.woodburn@gmail.com", "SW19 7AB", "07512656497", "001")
 print(jackie.make_phone_no_uk())
