@@ -27,8 +27,9 @@ print(f"{tina.first_name} has {tina.calculate_years_of_service()} years of servi
 michelle = Customer("michelle", "robinson", 57, "michelle@obama.com", "CH1C 4G0", "07917823958", "007")
 
 # demonstrate methods from Person still work
+print(michelle.return_full_name())
 michelle.change_surname("obama")
 print(michelle.return_full_name())
 
 # test methods specific to Customer
-print(michelle.make_phone_no_uk())
+print(michelle.make_phone_no_international("United States"))

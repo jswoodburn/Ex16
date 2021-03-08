@@ -34,7 +34,6 @@ print(jackie.get_savings_goal(4000,"2025-01-01"))
 ### EXTRA TO DOS ###
 # validation of dates being in the right format (yyyy-mm-dd)
 # validation of dates being before or after today respective to the need
-# finish savings class method "get_savings_goal"
 # validate other inputs i.e. integers where they're needed
 # calculate years between dates into a function (that we can access for both person and account???)
 # add decorators to properties (in person)
