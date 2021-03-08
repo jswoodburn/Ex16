@@ -28,6 +28,7 @@ print(jackie.check_balance())
 print(jackie.deposit(200))
 
 print(jackie.calculate_future_value("2024-04-05"))
+print(jackie.get_savings_goal(4000,"2025-01-01"))
 
 
 ### EXTRA TO DOS ###

@@ -43,8 +43,7 @@ from current_account import CurrentAccount
 
 from savings_account import SavingsAccount
 
-michelle = SavingsAccount("michelle", "obama", "1995-05-10", 2.5, 150)
+michelle = SavingsAccount("michelle", "obama", "1995-05-10", 2.5, 200)
 
-# print(michelle.withdraw(-1))
-
-print(michelle.calculate_future_value("2031-03-08"))
+print(michelle.check_balance())
+print(michelle.get_savings_goal(5000, "2025-02-31"))

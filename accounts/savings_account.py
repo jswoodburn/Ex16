@@ -50,18 +50,30 @@ class SavingsAccount(Account):
         # return f"After {age} years, you have accumulated £{self.balance - original_balance}. Your new " \
         #        f"balance is {self.balance}."
 
-    # def get_savings_goal(self, savings_goal_total, date_achieved_by):
-    #     today = date.today()
-    #     today_list = [today.year, today.month, today.day]
-    #     future_date_list = date_achieved_by.split("-")
-    #     if today_list[1] > int(future_date_list[1]):
-    #         years = int(future_date_list[0]) - today_list[0] - 1
-    #     elif today_list[1] < int(future_date_list[1]):
-    #         years = int(future_date_list[0]) - today_list[0]
-    #     else:
-    #         if today_list[2] > int(future_date_list[2]):
-    #             years = int(future_date_list[0]) - today_list[0] - 1
-    #         else:
-    #             years = int(future_date_list[0]) - today_list[0]
-    #
-    #
+
+    # something is wrong with the equation here. it gets close but not quite perfect...
+    def get_savings_goal(self, savings_goal_total, date_achieved_by):
+        today = date.today()
+        today_list = [today.year, today.month, today.day]
+        future_date_list = date_achieved_by.split("-")
+        if today_list[1] > int(future_date_list[1]):
+            years = int(future_date_list[0]) - today_list[0] - 1
+        elif today_list[1] < int(future_date_list[1]):
+            years = int(future_date_list[0]) - today_list[0]
+        else:
+            if today_list[2] > int(future_date_list[2]):
+                years = int(future_date_list[0]) - today_list[0] - 1
+            else:
+                years = int(future_date_list[0]) - today_list[0]
+
+        denominator = 0
+        for i in range(years):
+            denominator += pow((1+self.rate), i+1)
+
+        numerator = savings_goal_total - (self.balance * pow((1+self.rate), years))
+        savings_per_year = round((numerator/denominator), 2)
+
+        return f"At a fixed interest rate of {self.rate*100}%, you will need to save £{savings_per_year} per year " \
+               f"to achieve your savings goal of £{savings_goal_total} before\n{date_achieved_by}. This rate of " \
+               f"saving will let you achieve your goal in {years} years (by {today_list[0]+years}-{today_list[1]:02}" \
+               f"-{today_list[2]:02})." \
