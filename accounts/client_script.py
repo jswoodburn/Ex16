@@ -37,7 +37,7 @@ print(jackie.get_savings_goal(4000,"2025-01-01"))
 # validate other inputs i.e. integers where they're needed
 # calculate years between dates into a function (that we can access for both person and account???)
 # add decorators to properties (in person)
-# add dictionary for phone number international
 
+# make get savings goal work for months instead of rounding to years
 # ISA account inherits from savings account ("D" in the powerpoint branch")
 # Define high or low risk ISA investment and see what you'd get
